@@ -1,43 +1,28 @@
-import { Card, CardColumns, Container, Row , Button} from 'react-bootstrap';
+import { Card, CardColumns, Container } from 'react-bootstrap';
 import alphabet from './abc-pics';
-// import ReactCardFlip from 'react-card-flip';
-import { useState } from 'react';
-
+import FlippingCard from './FlippinCard';
 
 export const Dictionary = () => {
-	const [isFlipped, setIsFlipped] = useState(false);
-
-	const onClick = e => {
-		e.preventDefault();
-		if (!isFlipped) setIsFlipped(true);
-		if (isFlipped) setIsFlipped(false);
-	};
-
 	return (
 		<Container>
-			<CardColumns className='m-3'>
-				{alphabet &&
-					alphabet.map(({ id, src, title, alt }) => (
-						// <ReactCardFlip isFlipped={!isFlipped}>
-							<Card border='info' className='text-center' key={id}>
+			{alphabet && (
+				<CardColumns className='m-3'>
+					{alphabet.map(letter => (
+						<FlippingCard otherSide={letter.id} key={letter.id}>
+							<Card border='info' className='text-center'>
 								<Card.Img
+									height='330'
 									variant='top'
-									fluid
-									src={src}
-									title={title}
-									alt={alt}
+									src={letter.src}
+									title={letter.title}
+									alt={letter.alt}
 								/>
 								<Card.Body>Click to see the letter</Card.Body>
-								<Button onClick={onClick}>Flip</Button>
 							</Card>
-
-							// <Card>
-							// 	<h1>{id}</h1>
-							// 	<Button onClick={onClick}>Flip</Button>
-							// </Card>
-						// </ReactCardFlip>
+						</FlippingCard>
 					))}
-			</CardColumns>
+				</CardColumns>
+			)}
 		</Container>
 	);
 };
