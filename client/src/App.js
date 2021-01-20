@@ -12,13 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      {camera && <WebcamCapture photoProcessor={processPhotos} />}      
-      <button onClick={() => setCamera(!camera)}>toggle camera</button>
-      <div>
-          {imgSrc.map((item, i) => (
-            <img src={item} key={i} alt={i} />
-          ))}
-        </div>
+      
     </div>
   );
 }
