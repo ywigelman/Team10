@@ -21,7 +21,7 @@ export default function GameCard(props) {
     <Card>
       <Container>
         <Row style={{ justifyContent: "center", alignItems: "center" }}>
-          Sign the Following Letter:
+          Make the Following Letter:
           <br />
           <h2>{letter}</h2>
         </Row>
@@ -30,7 +30,7 @@ export default function GameCard(props) {
             {activateWebcam && <WebcamCapture photoProcessor={handleUpload} />}
           </Col>
         </Row>
-        <Row style={{ justifyContent: "center", alignItems: "center" }}>
+        <Row className="justify-content-center">
           <Col md={4} style={{ alignItems: "center" }}>
             <Button onClick={() => prev()}> Prev </Button>
           </Col>
