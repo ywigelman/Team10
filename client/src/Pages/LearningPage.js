@@ -3,20 +3,41 @@ import WebcamCapture from "../Components/WebcamCapture";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
+const tutorial = ['A','B','C','D','E','F','G']
+
 export function LearningPage() {
-  const [activateWebcam, setActivateWebcam] = useState(true);
+    
+    // exercise position handling
+    const [position, setPosition] = useState(0);
 
-  const reset = () => {
-    setActivateWebcam(false);
-    setTimeout(() => {
-      setActivateWebcam(true);
-    }, 0);
-  };
+    const nextPosition = () => {
+        if (position > 0) {
+            setPosition(position - 1);
+        }
+    }
+    const prevPosition = () => {
+        if (position < tutorial.length - 1) {
+            setPosition(position + 1)
+        }
+    }
+    // props for MainScreen ->
+    // position={position} total={tutorial.length - 1} next={nextPosition} prev={prevPosition} 
+    
 
-  const handleUpload = (image) => {
-    console.log("got here", image);
-    // axios.post('http://localhost:5000/')
-  };
+    // put all these inside MainScreen component
+    //-start
+    const [activateWebcam, setActivateWebcam] = useState(true);
+    const reset = () => {
+        setActivateWebcam(false);
+        setTimeout(() => {
+        setActivateWebcam(true);
+        }, 0);
+    };
+
+    const handleUpload = (image) => {
+        console.log("got here", image);
+    };
+    //-end
 
   return (
     <>
