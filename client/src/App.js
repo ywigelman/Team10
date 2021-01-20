@@ -2,8 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import {Container} from 'react-bootstrap';
 import { Navigation } from './Components/Navigation';
@@ -17,9 +16,8 @@ import { Profile } from './Pages/Profile';
 function App() {
   return (
     <Container fluid>
-      HI
         <Router>
-      <Navigation/>
+        <Navigation/>
           <Switch>
             <Route exact path="/" component={Home}>
             </Route>
