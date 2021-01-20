@@ -1,7 +1,7 @@
 import { Card, CardDeck } from 'react-bootstrap';
 import alphabet from './abc-pics';
 
-const Dictionary = () => {
+export const Dictionary = () => {
 	return (
 		<CardDeck>
 			{alphabet &&
@@ -14,4 +14,4 @@ const Dictionary = () => {
 	);
 };
 
-export default Dictionary;
+
