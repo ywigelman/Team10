@@ -7,6 +7,7 @@ import { Home } from './Pages/home';
 import { LearningPage } from './Pages/LearningPage';
 import { About } from './Pages/About';
 import { Profile } from './Pages/Profile';
+import './Components/FontAwesome';
 
 function App() {
 	return (
