@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import {Container} from 'react-bootstrap';
-import { NavBar } from './Components/Navbar';
+import { Navigation } from './Components/Navigation';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './Pages/Home';
 import { LearningPage } from './Pages/LearningPage';
@@ -17,8 +17,9 @@ import { Profile } from './Pages/Profile';
 function App() {
   return (
     <Container fluid>
+      HI
         <Router>
-          <NavBar/>
+      <Navigation/>
           <Switch>
             <Route exact path="/" component={Home}>
             </Route>
