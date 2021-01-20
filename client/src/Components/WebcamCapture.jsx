@@ -14,10 +14,7 @@ const WebcamCapture = ({
   const webcamRef = React.useRef(null);
 
   const capture = React.useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot({
-      height: 240,
-      width: 320,
-    });
+    const imageSrc = webcamRef.current.getScreenshot();
     photoProcessor(imageSrc);
   }, [webcamRef, photoProcessor]);
 
