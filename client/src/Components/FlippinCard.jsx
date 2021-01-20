@@ -1,8 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-export default function FlippingCard({ children, otherSide }) {
-  const [flipped, setFlipped] = React.useState(false);
+export default function FlippingCard({ children, otherSide, flip = false }) {
+  const [flipped, setFlipped] = React.useState(flip);
+
+  React.useEffect(() => {
+    setFlipped(flip);
+  }, [flip]);
+
   return (
     <div
       className="m-3"
