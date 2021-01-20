@@ -1,4 +1,4 @@
-import { Card, CardColumns, Container, Row } from 'react-bootstrap';
+import { Card, Container, Row } from 'react-bootstrap';
 import alphabet from './abc-pics';
 import FlippingCard from './FlippinCard';
 
