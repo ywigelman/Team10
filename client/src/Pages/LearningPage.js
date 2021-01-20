@@ -15,7 +15,7 @@ export function LearningPage() {
 
   const handleUpload = (image) => {
     console.log("got here", image);
-    // axios.post('http://localhost:5000/')
+    // axios.post('http://localhost:5000/') // can do this later 
   };
 
   return (
