@@ -11,7 +11,7 @@ import './Components/FontAwesome';
 
 function App() {
 	return (
-		<Container fluid>
+		<Container sm={true}>
 			<Router>
 				<Navigation />
 				<Switch>

@@ -1,8 +1,8 @@
-import { Card, CardColumns, Container, Row } from 'react-bootstrap';
+import { Card, CardColumns, Container, Row , Button} from 'react-bootstrap';
 import alphabet from './abc-pics';
-import ReactCardFlip from 'react-card-flip';
+// import ReactCardFlip from 'react-card-flip';
 import { useState } from 'react';
-import { Button } from 'bootstrap';
+
 
 export const Dictionary = () => {
 	const [isFlipped, setIsFlipped] = useState(false);
@@ -18,7 +18,7 @@ export const Dictionary = () => {
 			<CardColumns className='m-3'>
 				{alphabet &&
 					alphabet.map(({ id, src, title, alt }) => (
-						<ReactCardFlip isFlipped={!isFlipped}>
+						// <ReactCardFlip isFlipped={!isFlipped}>
 							<Card border='info' className='text-center' key={id}>
 								<Card.Img
 									variant='top'
@@ -31,11 +31,11 @@ export const Dictionary = () => {
 								<Button onClick={onClick}>Flip</Button>
 							</Card>
 
-							<Card>
-								<h1>{id}</h1>
-								<Button onClick={onClick}>Flip</Button>
-							</Card>
-						</ReactCardFlip>
+							// <Card>
+							// 	<h1>{id}</h1>
+							// 	<Button onClick={onClick}>Flip</Button>
+							// </Card>
+						// </ReactCardFlip>
 					))}
 			</CardColumns>
 		</Container>
