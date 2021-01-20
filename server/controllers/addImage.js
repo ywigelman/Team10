@@ -9,13 +9,14 @@ const cloudinary = require('../utils/cloudinary');
 // };
 
 const handleUpload = async (req, res) => {
-    try {
-        let result = await cloudinary.uploader.upload(req.body.file);
-        console.log(result);
-    }
-    catch (err) {
-        console.log(err.stack);
-    }
+    console.log(req.body.file)
+    // try {
+    //     let result = await cloudinary.uploader.upload(req.body.file);
+    //     console.log(result);
+    // }
+    // catch (err) {
+    //     console.log(err.stack);
+    // }
 };
 
 module.exports ={handleUpload};
