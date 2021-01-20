@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import WebcamCapture from "./WebcamCapture";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 export default function GameCard(props) {
   const { letter, position, total, next, prev } = props;
 
@@ -25,20 +27,26 @@ export default function GameCard(props) {
           <br />
           <h2>{letter}</h2>
         </Row>
-        <Row style={{ justifyContent: "center", alignItems: "center" }}>
-          <Col xs={6} md={4}>
+        <Row style={{ justifyContent: "center", alignItems: "center" }} className="mb-3">
+          {/* <Col xs={6} md={4}> */}
             {activateWebcam && <WebcamCapture photoProcessor={handleUpload} />}
-          </Col>
+          {/* </Col> */}
         </Row>
-        <Row style={{ justifyContent: "center", alignItems: "center" }}>
-          <Col md={4} style={{ alignItems: "center" }}>
-            <Button onClick={() => prev()}> Prev </Button>
+        <Row className="justify-content-around ml-5">
+          <Col md={2}>
+            <Button onClick={() => prev()} style={{backgroundColor:'#6800F4'}}>
+              <FontAwesomeIcon icon="fast-backward"/>
+            </Button>
           </Col>
-          <Col md={4} style={{ alignItems: "center" }}>
-            <Button onClick={() => reset()}>Try Again</Button>
+          <Col md={3} className="ml-5">
+            <Button onClick={() => reset()} variant="danger">
+              <FontAwesomeIcon icon="redo"/>
+            </Button>
           </Col>
-          <Col md={4} style={{ alignItems: "center" }}>
-            <Button onClick={() => next()}> Next </Button>
+          <Col md={3}>
+            <Button onClick={() => next()} style={{backgroundColor:'#6800F4'}}> 
+              <FontAwesomeIcon icon="fast-forward" />
+            </Button>
           </Col>
         </Row>
         <Row style={{ justifyContent: "center", alignItems: "center" }}>
