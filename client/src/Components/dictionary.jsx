@@ -1,4 +1,4 @@
-import { Card, CardColumns, Container } from 'react-bootstrap';
+import { Card, CardColumns, Container, Row } from 'react-bootstrap';
 import alphabet from './abc-pics';
 import FlippingCard from './FlippinCard';
 
@@ -6,7 +6,7 @@ export const Dictionary = () => {
 	return (
 		<Container>
 			{alphabet && (
-				<CardColumns className='m-3'>
+				<Row sm={2} lg={5}>
 					{alphabet.map(letter => (
 						<FlippingCard otherSide={letter.id} key={letter.id}>
 							<Card border='info' className='text-center'>
@@ -21,7 +21,7 @@ export const Dictionary = () => {
 							</Card>
 						</FlippingCard>
 					))}
-				</CardColumns>
+				</Row>
 			)}
 		</Container>
 	);
