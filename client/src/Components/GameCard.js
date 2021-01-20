@@ -3,11 +3,14 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import WebcamCapture from "./WebcamCapture";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import api from '../utils/api';
 
 export default function GameCard(props) {
   const { letter, position, total, next, prev } = props;
 
   const [activateWebcam, setActivateWebcam] = useState(true);
+  const [success, setSuccess] = useState(null);
+
   const reset = () => {
     setActivateWebcam(false);
     setTimeout(() => {
@@ -15,8 +18,13 @@ export default function GameCard(props) {
     }, 0);
   };
 
-  const handleUpload = (image) => {
-    console.log("got here", image);
+  const handleUpload = async (image) => {
+    const res = await api(image, letter);
+    if (res.toUpperCase() === letter.toUpperCase()) {
+      setSuccess(true);
+    } else {
+      setSuccess(false)
+    }
   };
 
   return (
@@ -31,36 +39,18 @@ export default function GameCard(props) {
           style={{ justifyContent: "center", alignItems: "center" }}
           className="mb-3"
         >
-          {/* <Col xs={6} md={4}> */}
-          {activateWebcam && <WebcamCapture photoProcessor={handleUpload} />}
-          {/* </Col> */}
+          {activateWebcam && <WebcamCapture photoProcessor={handleUpload} status={success} />}
         </Row>
-        <Row className="justify-content-around ml-5">
-          <Col md={2}>
-            <Button
-              onClick={() => prev()}
-              style={{ backgroundColor: "#6800F4" }}
-            >
-              <FontAwesomeIcon icon="fast-backward" />
-            </Button>
-            </Col>
-              </Row>
         <Row className="justify-content-around">
-          {/* <Col md={2}> */}
             <Button onClick={() => prev()} style={{backgroundColor:'#6800F4'}}>
               <FontAwesomeIcon icon="fast-backward"/>
             </Button>
-          {/* </Col> */}
-          {/* <Col md={3} className="ml-5"> */}
             <Button onClick={() => reset()} variant="danger">
               <FontAwesomeIcon icon="redo" />
             </Button>
-          {/* </Col> */}
-          {/* <Col md={3}> */}
             <Button onClick={() => next()} style={{backgroundColor:'#6800F4'}}> 
               <FontAwesomeIcon icon="fast-forward" />
             </Button>
-          {/* </Col> */}
         </Row>
         <Row style={{ justifyContent: "center", alignItems: "center" }}>
           <Col>
