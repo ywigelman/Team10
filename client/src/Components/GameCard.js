@@ -52,18 +52,9 @@ export default function GameCard(props) {
             <Button onClick={() => reset()} variant="danger">
               <FontAwesomeIcon icon="redo" />
             </Button>
-<<<<<<< HEAD
-          </Col>
-          <Col md={3}>
-            <Button
-              onClick={() => next()}
-              style={{ backgroundColor: "#6800F4" }}
-            >
-=======
           {/* </Col> */}
           {/* <Col md={3}> */}
             <Button onClick={() => next()} style={{backgroundColor:'#6800F4'}}> 
->>>>>>> affe0a48d9b4f63d4e080803706f248b6d4d9e34
               <FontAwesomeIcon icon="fast-forward" />
             </Button>
           {/* </Col> */}
