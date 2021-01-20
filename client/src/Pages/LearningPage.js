@@ -3,7 +3,34 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 import GameCard from "../Components/GameCard";
 
-const tutorial = ["A", "B", "C", "D", "E", "F", "G"];
+const tutorial = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 
 export function LearningPage() {
   // exercise position handling
@@ -20,14 +47,6 @@ export function LearningPage() {
       setPosition(position - 1);
     }
   };
-
-  // props for MainScreen ->
-  // position={position} total={tutorial.length - 1} next={nextPosition} prev={prevPosition}
-
-  // put all these inside MainScreen component
-  //-start
-
-  //-end
 
   return (
     <>
