@@ -1,2 +1,2 @@
-pip install tensorflow
+pip install tensorflow-cpu
 python inference.py
