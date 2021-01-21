@@ -8,14 +8,22 @@ import letterJ from "../images/signABC/letterJ.png";
 import letterO from "../images/signABC/letterO.png";
 
 function PracticeRound(props) {
-  const { name } = props;
-
   function stageOne() {
     return (
       <>
-        <Card.img>{letterA}</Card.img>
-        <Card.img>{letterB}</Card.img>
-        <Card.img>{letterC}</Card.img>
+        <div> B </div>
+        <Card>
+          {" "}
+          <Card.img>{letterA}</Card.img>
+        </Card>
+        <Card>
+          {" "}
+          <Card.img>{letterB}</Card.img>
+        </Card>
+        <Card>
+          {" "}
+          <Card.img>{letterC}</Card.img>
+        </Card>
       </>
     );
   }
@@ -23,16 +31,25 @@ function PracticeRound(props) {
   function stageTwo() {
     return (
       <>
-        <Card.img>{letterF}</Card.img>
-        <Card.img>{letterJ}</Card.img>
-        <Card.img>{letterO}</Card.img>
+        <div> O </div>
+        <Card>
+          {" "}
+          <Card.img>{letterF}</Card.img>
+        </Card>
+        <Card>
+          <Card.img>{letterJ}</Card.img>
+        </Card>
+        <Card>
+          {" "}
+          <Card.img>{letterO}</Card.img>
+        </Card>
       </>
     );
   }
 
   return (
     <Card>
-      <h1>Welcome:{name}</h1>
+      <h1>Welcome:{localStorage.getItem("name")}</h1>
       <p>Match the correct Sign to the Presented letter</p>
       <Container fluid>
         <Row>{(stageOne && stageOne) || stageTwo}</Row>
