@@ -58,14 +58,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='0'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+                    <Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -76,14 +78,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='1'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+										<Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -94,14 +98,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='2'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+										<Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -112,14 +118,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='3'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+										<Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -129,14 +137,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='4'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+                    <Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -146,14 +156,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='5'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+										<Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -163,14 +175,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='6'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+										<Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -180,14 +194,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='6'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+                    <Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>
@@ -197,14 +213,16 @@ export function Home() {
 								</Accordion.Toggle>
 								<Accordion.Collapse eventKey='7'>
 									<Card.Body>
-										<Link to='/learningPage'>
+										<Link to='/learningPage' className='mr-2'>
 											<Button disabled style={{ backgroundColor: '#6800F4' }}>
 												Learn
 											</Button>
 										</Link>
-										<Button disabled style={{ backgroundColor: '#6800F4' }}>
-											Tutorial
-										</Button>
+                    <Link to='/tutorial'>
+                      <Button style={{ backgroundColor: '#6800F4' }}>
+                        Tutorial
+                      </Button>
+                    </Link>
 									</Card.Body>
 								</Accordion.Collapse>
 							</Card>

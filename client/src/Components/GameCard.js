@@ -7,7 +7,7 @@ import api from '../utils/api';
 import './gameCard.css';
 
 export default function GameCard(props) {
-	const { letter, position, total, next, prev } = props;
+	const { letter, position, total, next, prev , picture} = props;
 
 	const [activateWebcam, setActivateWebcam] = useState(true);
 	const [success, setSuccess] = useState(null);
@@ -61,6 +61,7 @@ export default function GameCard(props) {
 						status={success}
 					/>
 				)}
+        {picture ? <Card className="ml-3 mt-2 mt-sm-0"> <img src={picture}/>  </Card>: <></>}
 			</Row>
 			<Row className='justify-content-around'>
 				<Button onClick={() => prev()} style={{ backgroundColor: '#6800F4' }}>

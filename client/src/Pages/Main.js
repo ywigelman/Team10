@@ -7,6 +7,7 @@ import { Home } from "./home";
 import { LearningPage } from "./LearningPage";
 import { About } from "./About";
 import { Profile } from "./Profile";
+import { TutorialPage } from "./TutorialPage";
 // import "./Components/FontAwesome";
 
 function Main() {
@@ -19,6 +20,7 @@ function Main() {
           <Route exact path="/learningPage" component={LearningPage}></Route>
           <Route exact path="/profile" component={Profile}></Route>
           <Route exact path="/about" component={About}></Route>
+          <Route exact path ="/tutorial" component={TutorialPage}/>
         </Switch>
       </Router>
     </Container>
