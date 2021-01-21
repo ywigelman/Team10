@@ -10,6 +10,7 @@ import { Profile } from "./Pages/Profile";
 import "./Components/FontAwesome";
 import { WelcomePage } from "./Pages/WelcomePage";
 import Main from "./Pages/Main";
+// import 'mdbreact/dist/css/mdb.css';
 
 function App() {
 

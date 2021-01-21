@@ -5,10 +5,12 @@ import { Dictionary } from './dictionary';
 export function MyVerticallyCenteredModal(props) {
 	return (
 		<Modal
-			{...props}
+      {...props}
+      size="lg"
 			dialogClassName='modal-95w'
 			aria-labelledby='contained-modal-title-vcenter'
-			centered>
+			centered
+      >
 			<Modal.Header closeButton>
 				<Modal.Title id='contained-modal-title-vcenter'>
 					ASL DICTIONARY

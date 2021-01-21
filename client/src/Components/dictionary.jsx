@@ -2,28 +2,30 @@ import { useState } from 'react';
 import { Button, Card, Container, Row } from 'react-bootstrap';
 import alphabet from './abc-pics';
 import FlippingCard from './FlippinCard';
+import { MDBBtn } from 'mdbreact';
 
 export const Dictionary = () => {
 	const [flipAll, setFlipAll] = useState(false);
 	return (
 		<Container>
-			<Button onClick={() => setFlipAll(!flipAll)}>Flip all</Button>
+			 <Button style={{ backgroundColor: '#6800F4' }} onClick={() => setFlipAll(!flipAll)}>Reveal all</Button>
 			{alphabet && (
 				<Row
 					style={{ textAlign: 'center', justifyContent: 'center' }}
-					sm={3}
-					lg={5}>
+					sm={5}
+					lg={4}
+					>
 					{alphabet.map(letter => (
 						<FlippingCard otherSide={letter.id} key={letter.id} flip={flipAll}>
-							<Card border='info' className='text-center'>
+							<Card className='text-center shadow-lg bg-white rounded'>
 								<Card.Img
-									height='200'
+									height='180'
 									variant='top'
 									src={letter.src}
 									title={letter.title}
 									alt={letter.alt}
 								/>
-								<Card.Body>Click to see the letter</Card.Body>
+								<Card.Body>Flip Card</Card.Body>
 							</Card>
 						</FlippingCard>
 					))}

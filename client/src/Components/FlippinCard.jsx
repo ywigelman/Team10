@@ -30,7 +30,6 @@ export default function FlippingCard({ children, otherSide, flip = false }) {
         {children}
       </div>
       <Card
-        border="info"
         style={{
           fontSize: "6rem",
           position: "absolute",
