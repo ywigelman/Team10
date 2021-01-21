@@ -14,6 +14,7 @@ export default function GameCard(props) {
 
 	const reset = () => {
 		setActivateWebcam(false);
+		setSuccess(null);
 		setTimeout(() => {
 			setActivateWebcam(true);
 		}, 0);
@@ -41,10 +42,14 @@ export default function GameCard(props) {
 					<h1>{letter}</h1>
 				</Col>
 			</Row>
-			{success ? (
+			{success === true && (
 				<Alert variant='success'>Great job!</Alert>
-			) : (
+			)}
+			{success === false && (
 				<Alert variant='danger'>Try again!</Alert>
+			)}
+			{success !== true && success !== false && (
+				<Alert style={{visibility:'hidden'}}></Alert> // placeholder for success status, should not be visible
 			)}
 			<Row
 				style={{ justifyContent: 'center', alignItems: 'center' }}
