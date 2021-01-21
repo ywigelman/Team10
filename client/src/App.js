@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Navigation } from "./Components/Navigation";
@@ -8,11 +8,22 @@ import { LearningPage } from "./Pages/LearningPage";
 import { About } from "./Pages/About";
 import { Profile } from "./Pages/Profile";
 import "./Components/FontAwesome";
+import { WelcomePage } from "./Pages/WelcomePage";
+import Main from "./Pages/Main";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('name')) {
+      setLoggedIn(true)
+    }
+  }, [])
+
   return (
     <Container sm={true}>
-      <Router>
+      {loggedIn ? <Main/> :  <WelcomePage loginProps={(value) => setLoggedIn(value)}/> }
+      {/* <Router>
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home}></Route>
@@ -20,7 +31,7 @@ function App() {
           <Route exact path="/profile" component={Profile}></Route>
           <Route exact path="/about" component={About}></Route>
         </Switch>
-      </Router>
+      </Router> */}
     </Container>
   );
 }

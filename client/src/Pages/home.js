@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, InputGroup, FormControl, Button } from "react-bootstrap";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export function Home() {
+  const [welcomeString, setWelcome] = useState('');
+
+
+
+  useEffect(() => {
+    setWelcome(localStorage.getItem('name'));
+  }, [])
+
+  const deleteStorage = () => {
+    localStorage.removeItem('name');
+  }
+
   return (
     <Card>
-      <h1>Welcome to Sign&Shoot</h1>
-      <InputGroup>
-        <FormControl
-          placeholder="Please Enter your Name"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <InputGroup.Append>
-          <Button variant="outline-secondary">Done</Button>
-        </InputGroup.Append>
-      </InputGroup>
+      <h1>Hey {welcomeString}!  to Sign&Shoot</h1>
+      <Button onClick={deleteStorage} href="/"><FontAwesomeIcon icon="sign-out-alt"/></Button>
     </Card>
   );
 }
