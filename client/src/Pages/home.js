@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import { Card, InputGroup, FormControl, Button, Container } from "react-bootstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import WelcomePgae from './WelcomePage';
+import Logo from "../Components/Logo";
 
 export function Home() {
   const [name, setName] = useState('');
@@ -83,15 +84,26 @@ export function Home() {
       )}
       {!loggedIn && (
         <>
-          <div className="display-4">Welcome to</div>
-          <div className="display-4 text-primary">Sign & Shoot</div>
+          <div className="display-4">
+        
+          </div>
+          <div className="display-4">
+             Welcome to
+             </div>
+          <div className="display-4 text-primary">
+            
+            <div style={{color:"#6800F4"}}><Logo /><span style={{marginLeft:'0.4em'}}>Sign & Shoot</span></div>
+            {/* <div className="col"></img></div> */}
+
+
+          </div>
           <div className="fs-3 my-2">What's your name?</div>
           <FormControl
             className="my-2"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               onChange={handleButton}
-            />
+          />
             <Button disabled={disabled} variant="outline-primary" onClick={handleSubmit}>Next</Button>
         </>
       )}
