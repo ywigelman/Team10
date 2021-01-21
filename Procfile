@@ -1,1 +1,1 @@
-web: python inference:p_app
+web: gunicorn inference:p_app
