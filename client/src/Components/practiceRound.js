@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import letterA from "../images/signABC/letterA.png";
 import letterB from "../images/signABC/letterB.png";
@@ -8,6 +8,8 @@ import letterJ from "../images/signABC/letterJ.png";
 import letterO from "../images/signABC/letterO.png";
 
 function PracticeRound(props) {
+  const { stage, setStage } = useState();
+
   function stageOne() {
     return (
       <>

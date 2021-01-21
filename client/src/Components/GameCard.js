@@ -4,6 +4,7 @@ import { Container, Button, Row, Col, Card, Alert } from 'react-bootstrap';
 import WebcamCapture from './WebcamCapture';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import api from '../utils/api';
+import './gameCard.css';
 
 export default function GameCard(props) {
 	const { letter, position, total, next, prev } = props;
@@ -27,55 +28,59 @@ export default function GameCard(props) {
 			setSuccess(false);
 		}
 	};
-
+	React.useEffect(() => {
+		reset();
+	}, [letter]);
 	return (
-		<Card>
-			<Container>
-				<Row
-					style={{
-						justifyContent: 'center',
-						alignItems: 'center',
-						marginTop: '2rem',
-						marginBottom: '1rem',
-					}}>
-					<h3>Make the Following Letter:</h3>
-					<br />
-					<h1> {letter}</h1>
-				</Row>
-				{success ? (
-					<Alert variant='success'>Great job!</Alert>
-				) : (
-					<Alert variant='danger'>Try again!</Alert>
+		<Container>
+			<Row className='instructions'>
+				<h3>Sign the following letter:</h3>
+			</Row>
+			<Row>
+				<Col>
+					<h1>{letter}</h1>
+				</Col>
+			</Row>
+			{success ? (
+				<Alert variant='success'>Great job!</Alert>
+			) : (
+				<Alert variant='danger'>Try again!</Alert>
+			)}
+			<Row
+				style={{ justifyContent: 'center', alignItems: 'center' }}
+				className='mb-3'>
+				{activateWebcam && (
+					<WebcamCapture
+						size='250'
+						photoProcessor={handleUpload}
+						status={success}
+					/>
 				)}
-				<Row
-					style={{ justifyContent: 'center', alignItems: 'center' }}
-					className='mb-3'>
-					{activateWebcam && (
-						<WebcamCapture photoProcessor={handleUpload} status={success} />
-					)}
-				</Row>
-				<Row className='justify-content-around'>
-					<Button onClick={() => prev()} style={{ backgroundColor: '#6800F4' }}>
-						<FontAwesomeIcon icon='fast-backward' />
-					</Button>
-					<Button onClick={() => reset()} variant='danger'>
-						<FontAwesomeIcon icon='redo' />
-					</Button>
-					<Button onClick={() => next()} style={{ backgroundColor: '#6800F4' }}>
-						<FontAwesomeIcon icon='fast-forward' />
-					</Button>
-				</Row>
-				<Row
-					style={{
-						justifyContent: 'center',
-						alignItems: 'center',
-						marginTop: '1rem',
-					}}>
-					<Col>
-						<ProgressBar animated now={(position / total) * 100} />
-					</Col>
-				</Row>
-			</Container>
-		</Card>
+			</Row>
+			<Row className='justify-content-around'>
+				<Button onClick={() => prev()} style={{ backgroundColor: '#6800F4' }}>
+					<FontAwesomeIcon icon='fast-backward' />
+				</Button>
+				<Button onClick={() => reset()} variant='danger'>
+					<FontAwesomeIcon icon='redo' />
+				</Button>
+				<Button
+					disabled={!success}
+					onClick={() => next()}
+					style={{ backgroundColor: '#6800F4' }}>
+					<FontAwesomeIcon icon='fast-forward' />
+				</Button>
+			</Row>
+			<Row
+				style={{
+					justifyContent: 'center',
+					alignItems: 'center',
+					marginTop: '1rem',
+				}}>
+				<Col>
+					<ProgressBar now={(position / total) * 100} />
+				</Col>
+			</Row>
+		</Container>
 	);
 }
