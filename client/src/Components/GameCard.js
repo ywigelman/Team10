@@ -44,7 +44,7 @@ export default function GameCard(props) {
               <FontAwesomeIcon icon="fast-backward" />
             </Button>
             </Col>
-              </Row>
+            </Row>
         <Row className="justify-content-around">
           {/* <Col md={2}> */}
             <Button onClick={() => prev()} style={{backgroundColor:'#6800F4'}}>
