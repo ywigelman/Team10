@@ -4,4 +4,5 @@ wget==3.2
 cloudinary==1.24.0
 gunicorn==20.0.4
 tensorflow-cpu==2.4.0
+keras==2.4.3
 opencv-python--headless
