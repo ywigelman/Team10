@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
+
 import { Card, InputGroup, FormControl, Button, Container } from "react-bootstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import WelcomePgae from './WelcomePage';
@@ -43,7 +45,10 @@ export function Home() {
           <div className="display-4">Hey {name}!</div>
           <div className="my-2">Please choose sign language:</div>
           <div className="my-2">
+                        <Link to='/learningPage'>
+
               <Button className="btn btn-primary" type="button">American Sign Language</Button>
+              </Link>
           </div>
           <div className="my-2">
               <Button className="btn btn-primary" type="button" disabled>Israeli Sign Language</Button>
