@@ -4,3 +4,4 @@ wget==3.2
 cloudinary==1.24.0
 opencv-python==4.5.1.48
 Keras==2.4.3
+gunicorn==20.0.4
