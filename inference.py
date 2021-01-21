@@ -5,10 +5,14 @@ from flask import Flask, request
 import os
 import cv2
 import cloudinary
-from conf import CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET, PREDICTION_TO_LETTER
 from keras.models import model_from_json
 
 p_app = Flask(__name__)
+
+PREDICTION_TO_LETTER: dict = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K',
+                              11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U',
+                              21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z', 26: 'del', 27: 'nothing', 28: 'space'}
+
 
 with open('model.json', 'r') as f:
     model = model_from_json(f.read())
@@ -16,9 +20,9 @@ with open('model.json', 'r') as f:
     model.load_weights('weights.h5')
 
 cloudinary.config(
-    cloud_name=CLOUDINARY_CLOUD_NAME,
-    api_key=CLOUDINARY_API_KEY,
-    api_secret=CLOUDINARY_API_SECRET
+    cloud_name=os.environ['CLOUDINARY_CLOUD_NAME'],
+    api_key=os.environ['CLOUDINARY_API_KEY'],
+    api_secret=os.environ['CLOUDINARY_API_SECRET']
 )
 
 
