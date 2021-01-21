@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import { Container, Button, Row, Col, Card } from 'react-bootstrap';
+import { Container, Button, Row, Col, Card, Alert } from 'react-bootstrap';
 import WebcamCapture from './WebcamCapture';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import api from '../utils/api';
@@ -33,16 +33,20 @@ export default function GameCard(props) {
 			<Container>
 				<Row
 					style={{
-						fontSize: '24px',
 						justifyContent: 'center',
 						alignItems: 'center',
 						marginTop: '2rem',
 						marginBottom: '1rem',
 					}}>
-					Make the Following Letter:
+					<h3>Make the Following Letter:</h3>
 					<br />
-					<h1>{letter}</h1>
+					<h1> {letter}</h1>
 				</Row>
+				{success ? (
+					<Alert variant='success'>Great job!</Alert>
+				) : (
+					<Alert variant='danger'>Try again!</Alert>
+				)}
 				<Row
 					style={{ justifyContent: 'center', alignItems: 'center' }}
 					className='mb-3'>
