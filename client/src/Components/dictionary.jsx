@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Card, CardColumns, Container, Row } from 'react-bootstrap';
+import { Button, Card, Container, Row } from 'react-bootstrap';
 import alphabet from './abc-pics';
 import FlippingCard from './FlippinCard';
 
@@ -9,12 +9,15 @@ export const Dictionary = () => {
 		<Container>
 			<Button onClick={() => setFlipAll(!flipAll)}>Flip all</Button>
 			{alphabet && (
-				<Row sm={2} lg={5}>
+				<Row
+					style={{ textAlign: 'center', justifyContent: 'center' }}
+					sm={3}
+					lg={5}>
 					{alphabet.map(letter => (
 						<FlippingCard otherSide={letter.id} key={letter.id} flip={flipAll}>
 							<Card border='info' className='text-center'>
 								<Card.Img
-									height='330'
+									height='200'
 									variant='top'
 									src={letter.src}
 									title={letter.title}
