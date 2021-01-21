@@ -1,0 +1,1 @@
+web: gunicorn inference:p_app
