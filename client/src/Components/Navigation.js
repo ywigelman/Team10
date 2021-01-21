@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Link, NavLink} from 'react-router-dom';
-import {Navbar, Nav, Form, Button} from 'react-bootstrap';
-import {FaGamepad, FaHome, FaInfo, FaBook, FaUser} from 'react-icons/fa'
+import {Link, } from 'react-router-dom';
+import {Navbar, Nav,} from 'react-bootstrap';
+import { FaHome, FaInfo, FaBook, FaTrophy} from 'react-icons/fa'
 
 import { MyVerticallyCenteredModal } from './ModalDictionary';
 
@@ -21,7 +21,7 @@ export function Navigation() {
                 <div className="d-none d-md-block" style={{fontWeight:'bold'}}>HOME</div>
             </Link>
             <Link to='/learningPage' className="d-flex flex-column align-items-center" style={{color:'#F8F8F8'}}>
-                <img style={{height:"2rem"}} src="/Logos-White.svg"/>
+                <img alt='' style={{height:"2rem"}} src="/Logos-White.svg"/>
                 {/* <FaGamepad size="2rem" /> */}
                 <div  className="d-none d-md-block"  style={{fontWeight:'bold'}}>PLAY</div>
             </Link>
@@ -30,7 +30,7 @@ export function Navigation() {
                 <div  className="d-none d-md-block"  style={{fontWeight:'bold'}}>ABOUT</div>
             </Link>
             <Link to='/profile' className="d-flex flex-column align-items-center" style={{color:'#F8F8F8'}}>
-                <FaUser size="2rem"/>
+                <FaTrophy size="2rem"/>
                 <div  className="d-none d-md-block"  style={{fontWeight:'bold'}}>PROFILE</div>
             </Link>
             <div className="d-flex flex-column align-items-center" onClick={() => setModalShow(true)} style={{cursor:'pointer'}}>

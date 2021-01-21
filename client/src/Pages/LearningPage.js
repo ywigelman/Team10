@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GameCard from "../Components/GameCard";
+import { Profile } from "./Profile";
 
 const tutorial = [
   "A",
@@ -45,6 +46,10 @@ export function LearningPage() {
       setPosition(position - 1);
     }
   };
+
+  useEffect(()=> {
+    return <Profile levels={position}/>
+  }, [position])
 
   return (
     <>
