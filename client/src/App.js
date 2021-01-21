@@ -12,17 +12,11 @@ import { WelcomePage } from "./Pages/WelcomePage";
 import Main from "./Pages/Main";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem('name')) {
-      setLoggedIn(true)
-    }
-  }, [])
 
   return (
-    <Container sm={true}>
-      {loggedIn ? <Main/> :  <WelcomePage loginProps={(value) => setLoggedIn(value)}/> }
+    <Container fluid="sm" className="pb-5">
+      {/* {loggedIn ? <Main/> :  <WelcomePage loginProps={(value) => setLoggedIn(value)}/> } */}
+      <Main/>
       {/* <Router>
         <Navigation />
         <Switch>
